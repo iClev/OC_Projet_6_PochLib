@@ -1,29 +1,34 @@
-@mixin button ($colour) {
+@mixin button($colour) {
   display: inline-block;
   padding: 10px 24px;
   outline: none;
-  margin:auto;
+  margin: auto;
   text-align: center;
   text-decoration: none;
-  border-radius: 6px;	
+  border-radius: 6px;
   border: 1px solid transparent;
   color: white;
-  width : 200px;
-	height: 40px;
+  width: 200px;
+  height: 40px;
   line-height: 20px;
   font-size: 15px;
   font-family: $fonts;
-  font-weight:normal;
+  font-weight: normal;
   background-color: $colour;
-	justify-content: center;
-  display:flex;
-        &:hover {
-          opacity: 0.9;
-        }
+  justify-content: center;
+  display: flex;
+  &:hover {
+    opacity: 0.9;
   }
+}
 
-  @mixin rounded($border) {
-    -webkit-border-radius: $border;
-    -moz-border-radius: $border;
-    border-radius: $border;
-  }
+@mixin rounded($border) {
+  -webkit-border-radius: $border;
+  -moz-border-radius: $border;
+  border-radius: $border;
+}
+
+@mixin margers-align {
+  margin: auto;
+  text-align: center;
+}

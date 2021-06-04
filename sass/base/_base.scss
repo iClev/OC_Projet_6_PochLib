@@ -1,58 +1,52 @@
-$center-align:center;
+$center-align: center;
 
 body {
-  text-align: center;
   margin: auto;
-  font-family: $fonts;
-  padding: 10px;
+  padding: 20px;
 
   #myBooks {
-	  
-	  /* Poch'Lib */
-		h1 {
-			padding-top: 1%;
-			text-align: center;
-			border: 3px rgb(238, 237, 237);
-			height: 40px;
-			box-shadow: 0 4px 2px -2px rgb(209, 209, 209);
-			background-color: rgb(238, 237, 237);
-			font-weight: normal;
-			font-family: $fonts;
-			font-size: 1.5em;
-			background-color: #eff0f4;
-			box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-		}
-		
-		/* Séparateur */
-		hr {
-			border-top: none;
-			margin-top: 1rem;
-			// margin-bottom: 1rem;
-        }
-		
-		/* Ma poch'liste */
-		#content {
-			border-top: 2px solid #e2e2e2;
-			margin-top: 10px;
-			color: black !important;
-			opacity: 0.9;
-		}
-	  
+    /* Poch'Lib */
+    h1 {
+      padding-top: 1%;
+      text-align: center;
+      border: 3px rgb(238, 237, 237);
+      height: 40px;
+      line-height: 30px;
+      // box-shadow: 0 4px 2px -2px rgb(209, 209, 209);
+      // background-color: rgb(238, 237, 237);
+      font-weight: normal;
+      font-family: $fonts;
+      // font-size: 1.5em;
+      background-color: #eff0f4;
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Séparateur */
+    hr {
+      border-top: none;
+      margin-top: 1rem;
+    }
+
+    /* Ma poch'liste */
+    .h2 {
+      font-family: $fonts;
+      font-size: 0.6em;
+      font-weight: bolder;
+      margin-top: 2%;
+    }
+    #content {
+      font-family: $fonts;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
-  
-}
-.title
-{
-	size: 100%;
-}
+  .title {
+    // size: 100%;
+  }
 
-.error
-{
-	text-align: center;
-	color: red;
+  .error {
+    text-align: center;
+    color: red;
+  }
 }
-
-
-  
-  
-  

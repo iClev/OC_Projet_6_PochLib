@@ -1,19 +1,18 @@
-.form-group .form-label {
-	display: block;
-  }
-  
+.form-group {
+  display: block;
   .form-label {
     text-align: left !important;
     margin-top: 0.5rem;
   }
-  
-  .form-control{
-    width: 100%;
-    height: 30px;
-    display:flex;
-  }
 
-  //   .displayForm2 {
+  .form-control {
+    width: 99.2%;
+    height: 30px;
+    display: flex;
+  }
+}
+
+//   .displayForm2 {
 // 	@include button($main-colour);
 // 	display:flex;
 //   }

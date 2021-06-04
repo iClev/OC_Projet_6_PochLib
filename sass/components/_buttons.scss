@@ -1,16 +1,15 @@
 .addButton {
-	@include button($colour-green);
-    cursor: pointer;
+  @include button($colour-green);
+  cursor: pointer;
 }
 
 .searchButton {
-	@include button($colour-green);
-	margin-right:100%;
-    cursor: pointer;
+  @include button($colour-green);
+  margin-right: 100%;
+  cursor: pointer;
 }
-.cancelButton{
-	@include button($colour-red);
-	margin-right:100%;
-	cursor: pointer;
+.cancelButton {
+  @include button($colour-red);
+  margin-right: 100%;
+  cursor: pointer;
 }
-
