@@ -104,7 +104,7 @@
   align-self: center;
   justify-content: space-between;
 }
-.card-container .card-bookMark {
+.card-container fas fa-bookmark {
   display: flex;
   margin-bottom: 10px;
   float: right;

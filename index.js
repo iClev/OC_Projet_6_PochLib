@@ -40,12 +40,12 @@ function addSearchForm() {
       </div><br></br>
     </div>
   </form>`;
-}
+} 
 
-function searchBook() {
-  const url = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
+  function searchBook() {
+    const url = "https://www.googleapis.com/books/v1/volumes?q=search+terms";
 
-  fetch(url)
+    fetch(url)
     .then((res) => res.json())
     .then((results) => {
       const cardContainer = document.createElement('div');
@@ -81,14 +81,9 @@ function searchBook() {
           descriptionBookCard.innerText = descriptionBookCard.innerText.substring(0, 200) + '...';
         }
 
-        const bookMarkCard = document.createElement('span');
-        bookMarkCard.className = 'card-bookMark';
 
-        const bookmark = document.createElement('i');
-        bookmark.className = 'card-fav';
-        bookMarkCard.innerHTML = '<i class="fas fa-bookmark"></i>';
-        bookmark.setAttribute('class', 'fas fa-bookmark')
-        bookmark.setAttribute('style', 'font-size: 6em; color: #1c938c')
+        const bookMarks = document.createElement('i');
+        bookMarks.className = 'fas fa-bookmark';
 
         const imgCard = document.createElement('img');
         imgCard.className = 'card-img';
@@ -99,56 +94,95 @@ function searchBook() {
           imgCard.src = book.volumeInfo.imageLinks.thumbnail;
         }
 
+        const deleteCard = document.createElement('i');
+        deleteCard.className = 'fas fa-trash-alt';
+        
+
         cardContainer.appendChild(card);
-        card.appendChild(bookMarkCard);
-        bookMarkCard.appendChild(bookMark);
+        card.appendChild(bookMarks);
         card.appendChild(titleBookCard);
         card.appendChild(idBookCard);
         card.appendChild(authorBookCard);
         card.appendChild(descriptionBookCard);
         card.appendChild(imgCard);
+        bookMarks.addEventListener('click', (e) => {
+          e.preventDefault();
+          if ((sessionStorage.getItem('book') !== null) && (sessionStorage.getItem('book') !== undefined)) {
+            books = JSON.parse(sessionStorage.getItem('book'));
+          } else {
+            books = [];
+          }
+          // console.log(e.currentTarget.classList);
+
+          if (books.some(b => b.id === book.id)) {
+            alert('Ajout impossible, le livre est déjà présent dans vos favoris.');
+          } else {
+            books.push(book);
+            sessionStorage.setItem('book', JSON.stringify(books));
+            e.currentTarget.classList = 'fas fa-bookmark';
+            e.currentTarget.setAttribute("class", "");
+            e.currentTarget.setAttribute("class", "fas fa-times");
+            e.currentTarget.setAttribute("class", "fas fa-trash-alt");
+          }
+          deleteCard.addEventListener('click', (e) => {
+            e.preventDefault();
+            sessionStorage.setItem('book', JSON.stringify(foundBooks));
+            location.reload();
+            return false;
+        })
+            
+        });
+        document.getElementById('content').appendChild(cardContainer);
       });
-      document.getElementById('content').appendChild(cardContainer);
-    });
-}
+    })
+  }
 
-//Cancel the search and the result
-function cancelSearch() {
-  addBookDiv.innerHTML = `
+  //Cancel the search and the result
+  function cancelSearch() {
+    addBookDiv.innerHTML = `
     <button onclick="addSearchForm()" type="button" class="addButton">Ajouter un livre</button>`;
-  searchResults.innerHTML = "";
-  search = [];
-  resultDivMessage.innerHTML = "";
-}
+    searchResults.innerHTML = "";
+    searchBook();
+    // search = [];
+    // resultDivMessage.innerHTML = "";
+  }
 
-function searchResults() {
-  let searchResults = document.createElement("div");
-  searchResults.classList.add("results");
-  searchButton.after(searchResults);
-}
+  function searchResults() {
+    let searchResults = document.createElement("div");
+    searchResults.classList.add("results");
+    searchButton.after(searchResults);
+  }
 
-//Create alert
-function alertMessage() {
-  let alert = document.createElement("div");
-  nouveauLivre.after(alert);
-}
-alertMessage();
+  //Create alert
+  function alertMessage() {
+    let alert = document.createElement("div");
+    nouveauLivre.after(alert);
+  }
+  alertMessage();
 
-function addToFavorites(book) {
-  bookMark.addEventListener('click', (e) => {
-    e.preventDefault();
-    let books = [];
-    if ((sessionStorage.getItem('book') !== null) && (sessionStorage.getItem('book') !== undefined)) {
-      books = JSON.parse(sessionStorage.getItem('book'));
-    }
+  // function addToFavorites(book) {
+  //   let books = [];
+  //   bookMarks.addEventListener('click', (e) => {
+  //     e.preventDefault();
+  //     if ((sessionStorage.getItem('book') !== null) && (sessionStorage.getItem('book') !== undefined)) {
+  //       books = JSON.parse(sessionStorage.getItem('book'));
+  //     }
 
-    if (books.some(b => b.id === book.id)) {
-      alert('Ajout impossible, le livre est déjà présent dans vos favoris.');
-    } else {
-      books.push(book);
-      sessionStorage.setItem('book', JSON.stringify(books));
-    }
-  })
-}
+  //     if (books.some(b => idBookCard === book)) {
+  //       alert('Ajout impossible, le livre est déjà présent dans vos favoris.');
+  //     } else {
+  //       books.push(book);
+  //       sessionStorage.setItem('book', JSON.stringify(books));
+  //       bookmarks.setAttribute('class', 'fas fa-bookmark')
+  //       bookmarks.setAttribute('style', 'font-size: 6em; color: #1c938c')
+  //     }
+  //   })
+  // }
 
-
+  // Create elements
+  // List of favourite book cards saved in the session storage.
+  // const headerPage = document.querySelector('header');
+  // const tableIcon = document.createElement('link');
+  // tableIcon.setAttribute('rel', 'icon');
+  // tableIcon.setAttribute('href', 'images/logo.png');
+  // headerPage.appendChild(tableIcon);

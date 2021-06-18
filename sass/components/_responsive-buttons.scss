@@ -10,11 +10,17 @@
   flex-wrap: wrap;
   align-self: center;
   justify-content: space-between;
-  .card-bookMark {
+  .fas .fa-bookmark{
     display: flex;
     margin-bottom: 10px;
     float: right;
     color: green;
+  }
+  .fas .fa-trash-alt{
+    display: flex;
+    margin-bottom: 10px;
+    float: right;
+    color: red;
   }
   .card-title {
     display: flex;
