@@ -13,7 +13,7 @@
   display: flex;
 }
 
-.addButton {
+.addBookButton, #addbuttonFav {
   display: inline-block;
   padding: 10px 24px;
   outline: none;
@@ -34,7 +34,7 @@
   display: flex;
   cursor: pointer;
 }
-.addButton:hover {
+.addBookButton:hover, #addbuttonFav:hover {
   opacity: 0.9;
 }
 

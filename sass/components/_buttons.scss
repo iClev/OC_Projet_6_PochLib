@@ -1,4 +1,4 @@
-.addButton {
+.addBookButton,#addbuttonFav {
   @include button($colour-green);
   cursor: pointer;
 }
