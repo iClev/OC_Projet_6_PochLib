@@ -145,33 +145,16 @@ function displaySearchBook() {
 
         bookMarks.addEventListener('click', (e) => {
           e.preventDefault();
-          // if ((sessionStorage.length!==null)){
-          //   books = JSON.parse(sessionStorage.getItem('book'));
-          // } else {
-          //   books = [];
-          // }
-          if ((sessionStorage.getItem('book') !== null) && (sessionStorage.getItem('book') !== undefined)) {
-            books = JSON.parse(sessionStorage.getItem('book'));
-            // alert("book1");
-            displayBookToPochList(book);
-          } else {
-            // alert("book2");
-            books = [];
-          }
-
-          if (books.some(b => b.id === book.id)) {
+          if ((sessionStorage.getItem(book.id) != null)) {
             alert('Ajout impossible, le livre est déjà présent dans vos favoris.');
-          }  else {
-              books.push(book);
-              sessionStorage.setItem('book', JSON.stringify(books));
-              e.currentTarget.classList = 'fas fa-bookmark';
-              e.currentTarget.setAttribute("class", "");
-              e.currentTarget.setAttribute("class", "fas fa-times");
-              e.currentTarget.setAttribute("class", "fas fa-trash-alt");
-            }
-          
-            
-
+          } else {
+            sessionStorage.setItem(book.id, JSON.stringify(book));
+            e.currentTarget.classList = 'fas fa-bookmark';
+            e.currentTarget.setAttribute("class", "");
+            e.currentTarget.setAttribute("class", "fas fa-times");
+            e.currentTarget.setAttribute("class", "fas fa-trash-alt");
+            displayBookToPochList(book);
+          }
 
           deleteCard.addEventListener('click', (e) => {
             e.preventDefault();
