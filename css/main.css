@@ -98,17 +98,28 @@
   padding: 20px;
 }
 
+.fa-bookmark {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: green;
+}
+
+#titlePochList.h2 {
+  text-align: center;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
   justify-content: space-between;
 }
-.card-container fas fa-bookmark {
+.card-container .fa-trash-alt {
   display: flex;
   margin-bottom: 10px;
   float: right;
-  color: green;
+  color: red;
 }
 .card-container .card-title {
   display: flex;
@@ -135,6 +146,7 @@ body {
 body #myBooks {
   /* Poch'Lib */
   /* Séparateur */
+  /* Nouveau livre */
   /* Ma poch'liste */
 }
 body #myBooks h1 {
@@ -150,11 +162,19 @@ body #myBooks h1 {
 }
 body #myBooks hr {
   border-top: none;
-  margin-top: 1rem;
+  margin-top: 2%;
+  margin-bottom: -1%;
 }
 body #myBooks .h2 {
+  text-align: center;
   font-family: "Source Code Pro", monospace;
-  font-size: 0.6em;
+  font-weight: bolder;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+body #myBooks #titlePochList.h2 {
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
   font-weight: bolder;
   margin-top: 2%;
 }
@@ -164,9 +184,15 @@ body #myBooks #content {
   flex-direction: column;
   align-items: center;
 }
-body .error {
+body #myBooks .error {
   text-align: center;
   color: red;
+}
+body .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
 }
 
 /*# sourceMappingURL=main.css.map */

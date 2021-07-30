@@ -5,18 +5,23 @@
   border: 2px solid black;
   padding: 20px;
 }
+.fa-bookmark{
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: green;
+}
+#titlePochList.h2 {
+  text-align: center;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
   justify-content: space-between;
-  .fas .fa-bookmark{
-    display: flex;
-    margin-bottom: 10px;
-    float: right;
-    color: green;
-  }
-  .fas .fa-trash-alt{
+
+  
+  .fa-trash-alt{
     display: flex;
     margin-bottom: 10px;
     float: right;
