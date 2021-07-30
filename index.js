@@ -145,19 +145,19 @@ function displaySearchBook() {
 
         bookMarks.addEventListener('click', (e) => {
           e.preventDefault();
-          if ((sessionStorage.length!==null)){
-            books = JSON.parse(sessionStorage.getItem('book'));
-          } else {
-            books = [];
-          }
-          // if ((sessionStorage.getItem('book') !== null) && (sessionStorage.getItem('book') !== undefined)) {
-            // books = JSON.parse(sessionStorage.getItem('book'));
-          //   alert("book1");
-            displayBookToPochList(book);
+          // if ((sessionStorage.length!==null)){
+          //   books = JSON.parse(sessionStorage.getItem('book'));
           // } else {
-          //   alert("book2");
           //   books = [];
           // }
+          if ((sessionStorage.getItem('book') !== null) && (sessionStorage.getItem('book') !== undefined)) {
+            books = JSON.parse(sessionStorage.getItem('book'));
+            // alert("book1");
+            displayBookToPochList(book);
+          } else {
+            // alert("book2");
+            books = [];
+          }
 
           if (books.some(b => b.id === book.id)) {
             alert('Ajout impossible, le livre est déjà présent dans vos favoris.');
@@ -172,8 +172,7 @@ function displaySearchBook() {
           
             
 
-          
-         
+
           deleteCard.addEventListener('click', (e) => {
             e.preventDefault();
             sessionStorage.setItem('book', JSON.stringify(storedBooks));
@@ -215,7 +214,7 @@ function displaySearchBook() {
 function displayBookToPochList(book) {
 
   // alert("test2");
-  console.log(book.id);
+  // console.log(book.id);
   const content = document.getElementById('content');
   const pochListContainer = document.createElement('div');
 
