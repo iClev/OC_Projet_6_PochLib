@@ -13,7 +13,8 @@
   display: flex;
 }
 
-.addBookButton, #addbuttonFav {
+.addBookButton,
+#addbuttonFav {
   display: inline-block;
   padding: 10px 24px;
   outline: none;
@@ -34,7 +35,8 @@
   display: flex;
   cursor: pointer;
 }
-.addBookButton:hover, #addbuttonFav:hover {
+.addBookButton:hover,
+#addbuttonFav:hover {
   opacity: 0.9;
 }
 
@@ -105,6 +107,13 @@
   color: green;
 }
 
+.fa-trash-alt {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: red;
+}
+
 #titlePochList.h2 {
   text-align: center;
 }
@@ -114,12 +123,6 @@
   flex-wrap: wrap;
   align-self: center;
   justify-content: space-between;
-}
-.card-container .fa-trash-alt {
-  display: flex;
-  margin-bottom: 10px;
-  float: right;
-  color: red;
 }
 .card-container .card-title {
   display: flex;
@@ -133,12 +136,30 @@
 .card-container .card-description {
   display: flex;
 }
-.card-container .card-img {
+.card-container .card-img,
+.card-container .cardimg {
   display: block;
   margin: auto;
-  height: 40vh;
+  margin-bottom: 10px;
+  max-width: 150px;
+  max-height: 300px;
 }
 
+@media screen and (max-width: 400px) {
+  body {
+    background-color: rgba(200, 196, 196, 0.897);
+    margin: 1em 2em;
+  }
+  body .card {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 400px) {
+  body {
+    background-color: #c8b7b7;
+    margin: 1em 2em;
+  }
+}
 body {
   margin: auto;
   padding: 20px;
@@ -163,7 +184,6 @@ body #myBooks h1 {
 body #myBooks hr {
   border-top: none;
   margin-top: 2%;
-  margin-bottom: -1%;
 }
 body #myBooks .h2 {
   text-align: center;

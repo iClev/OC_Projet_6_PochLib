@@ -5,12 +5,20 @@
   border: 2px solid black;
   padding: 20px;
 }
-.fa-bookmark{
+.fa-bookmark {
   display: flex;
   margin-bottom: 10px;
   float: right;
   color: green;
 }
+
+.fa-trash-alt {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: red;
+}
+
 #titlePochList.h2 {
   text-align: center;
 }
@@ -20,13 +28,6 @@
   align-self: center;
   justify-content: space-between;
 
-  
-  .fa-trash-alt{
-    display: flex;
-    margin-bottom: 10px;
-    float: right;
-    color: red;
-  }
   .card-title {
     display: flex;
   }
@@ -39,9 +40,34 @@
   .card-description {
     display: flex;
   }
-  .card-img {
+
+  .card-img,
+  .cardimg {
     display: block;
     margin: auto;
-    height: 40vh;
+    margin-bottom: 10px;
+    max-width: 150px;
+    max-height: 300px;
+  }
+}
+
+// MEDIA QUERIES responsive for : Mobile, Tablet, Desktop
+
+//For Mobile
+@media screen and (max-width: 400px) {
+  body {
+    background-color: rgba(200, 196, 196, 0.897);
+    margin: 1em 2em;
+    .card {
+      width: 100%;
+    }
+  }
+}
+
+//For Tablet
+@media screen and (max-width: 1024px) and (min-width: 400px) {
+  body {
+    background-color: rgb(200, 183, 183);
+    margin: 1em 2em;
   }
 }
