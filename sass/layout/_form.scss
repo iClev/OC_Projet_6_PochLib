@@ -1,0 +1,13 @@
+.form-group {
+  display: block;
+  .form-label {
+    text-align: left !important;
+    margin-top: 0.5rem;
+  }
+
+  .form-control {
+    width: 99.2%;
+    height: 30px;
+    display: flex;
+  }
+}

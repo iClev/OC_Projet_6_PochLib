@@ -1,0 +1,218 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
+.form-group {
+  display: block;
+}
+.form-group .form-label {
+  text-align: left !important;
+  margin-top: 0.5rem;
+}
+.form-group .form-control {
+  width: 99.2%;
+  height: 30px;
+  display: flex;
+}
+
+.addBookButton,
+#addbuttonFav {
+  display: inline-block;
+  padding: 10px 24px;
+  outline: none;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: white;
+  width: 200px;
+  height: 40px;
+  line-height: 20px;
+  font-size: 15px;
+  font-family: "Source Code Pro", monospace;
+  font-weight: normal;
+  background-color: #056e54;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
+.addBookButton:hover,
+#addbuttonFav:hover {
+  opacity: 0.9;
+}
+
+.searchButton {
+  display: inline-block;
+  padding: 10px 24px;
+  outline: none;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: white;
+  width: 200px;
+  height: 40px;
+  line-height: 20px;
+  font-size: 15px;
+  font-family: "Source Code Pro", monospace;
+  font-weight: normal;
+  background-color: #056e54;
+  justify-content: center;
+  display: flex;
+  margin-right: 100%;
+  cursor: pointer;
+}
+.searchButton:hover {
+  opacity: 0.9;
+}
+
+.cancelButton {
+  display: inline-block;
+  padding: 10px 24px;
+  outline: none;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  color: white;
+  width: 200px;
+  height: 40px;
+  line-height: 20px;
+  font-size: 15px;
+  font-family: "Source Code Pro", monospace;
+  font-weight: normal;
+  background-color: #bb320f;
+  justify-content: center;
+  display: flex;
+  margin-right: 100%;
+  cursor: pointer;
+}
+.cancelButton:hover {
+  opacity: 0.9;
+}
+
+.card {
+  width: 40vw;
+  background-color: #d1cece;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+.fa-bookmark {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: green;
+}
+
+.fa-trash-alt {
+  display: flex;
+  margin-bottom: 10px;
+  float: right;
+  color: red;
+}
+
+#titlePochList.h2 {
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: space-between;
+}
+.card-container .card-title {
+  display: flex;
+}
+.card-container .card-id {
+  display: flex;
+}
+.card-container .card-author {
+  display: flex;
+}
+.card-container .card-description {
+  display: flex;
+}
+.card-container .card-img,
+.card-container .cardimg {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 150px;
+  max-height: 300px;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    background-color: rgba(200, 196, 196, 0.897);
+    margin: 1em 2em;
+  }
+  body .card {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 400px) {
+  body {
+    background-color: #c8b7b7;
+    margin: 1em 2em;
+  }
+}
+body {
+  margin: auto;
+  padding: 20px;
+}
+body #myBooks {
+  /* Poch'Lib */
+  /* Séparateur */
+  /* Nouveau livre */
+  /* Ma poch'liste */
+}
+body #myBooks h1 {
+  padding-top: 1%;
+  text-align: center;
+  border: 3px #eeeded;
+  height: 40px;
+  line-height: 30px;
+  font-weight: normal;
+  font-family: "Source Code Pro", monospace;
+  background-color: #eff0f4;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+body #myBooks hr {
+  border-top: none;
+  margin-top: 2%;
+}
+body #myBooks .h2 {
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  font-weight: bolder;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+body #myBooks #titlePochList.h2 {
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  font-weight: bolder;
+  margin-top: 2%;
+}
+body #myBooks #content {
+  font-family: "Source Code Pro", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #myBooks .error {
+  text-align: center;
+  color: red;
+}
+body .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+/*# sourceMappingURL=main.css.map */

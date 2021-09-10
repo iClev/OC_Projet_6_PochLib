@@ -1,0 +1,21 @@
+{
+  "name": "oc_projet_6_pochlib",
+  "version": "1.0.0",
+  "description": "Projet 6 OC",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/main.css",
+    "sassProd": "sass ./sass/main.scss:./css/main.css --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iClev/OC_Projet_6_PochLib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iClev/OC_Projet_6_PochLib/issues"
+  },
+  "homepage": "https://github.com/iClev/OC_Projet_6_PochLib#readme"
+}
